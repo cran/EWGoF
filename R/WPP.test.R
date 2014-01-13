@@ -50,7 +50,7 @@ WPP.test <- function(x,type="SB",nsim=2000){
       WPP.statistic <- s^2
       ####Test statistic based on stabilized probability plot
     }else if(type=="SPP"){
-      y=BLOMEst(x)$y
+      y=MLEst(x)$y
       r = 2/pi*asin(sqrt((I-0.5)/n))
       s = 2/pi*asin(sqrt(1-exp(-exp(y))))
       WPP.statistic <- max(abs(r-s))

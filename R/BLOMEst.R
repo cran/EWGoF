@@ -8,8 +8,8 @@ BLOMEst<-function(x){
   I<- 1:1:n
   Theta<- c(0,-(1-I/(n+1))*log(1-I/(n+1)),0)
   C1<- Theta[1:(n+1)] -Theta[2:(n+2)] 
-  Esp <- GoFNS(1,n,n)
-  Esp<- c(0,Esp,0)
+  Esp0 <- GoFNS(1,n,n)
+  Esp<- c(0,Esp0,0)
   C2<- Theta[1:(n+1)]*Esp[1:(n+1)]-Theta[2:(n+2)]*Esp[2:(n+2)]
   mat <- matrix(c(sum(C1^2),sum(C1*C2),sum(C1*C2),sum(C2^2)),nrow=2,ncol=2)
   det <-  determinant(mat,logarithm=FALSE)$modulus
