@@ -1,0 +1,6 @@
+useDynLib(EWGoF)
+import(Rcpp)
+importFrom(miscTools, sumKeepAttr) 
+importFrom(maxLik,maxNR)
+export("WEDF.test","WNS.test","EDF_NS.test","WPP.test","WLP.test",
+"WLK.test","LK.test","CF.test","LRI.test","MLEst","LSEst","MEst","BLOMEst")
