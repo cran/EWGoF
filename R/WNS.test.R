@@ -1,5 +1,5 @@
 
-WNS.test <- function(x,type="TS",s=0,r=0, nsim=2000){
+WNS.test <- function(x,type="TS",s=0,r=0, nsim=1000){
   MLE<-function(x){
     if(sum(x<0)){stop(paste("Data x is not a positive sample"))}
     n=length(x)

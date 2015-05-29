@@ -5,7 +5,7 @@
 Computes the Weibull GoF tests based on the three following statistics: the score, Wald and likelihood ratio GoF tests. These tests include the Weibull distribution in larger statistics and apply a parametric test to the additional parameter.
 }
 \usage{
-WLK.test(x, type = "GG1", funEstimate = "MLE", procedure = "S", nsim = 500)}
+WLK.test(x, type = "GG1", funEstimate = "MLE", procedure = "S", nsim = 500, r=0)}
 
 \arguments{
 \item{x}{a numeric vector of data values.}
@@ -24,6 +24,8 @@ WLK.test(x, type = "GG1", funEstimate = "MLE", procedure = "S", nsim = 500)}
 \item{procedure}{the procedure used as a default is the score "S". The procedure can be either "W" for the Wald test or "LR" for the test based on the likelihood ratio procedure.}
 
 \item{nsim}{an integer specifying the number of replicates used in Monte Carlo.}
+
+\item{r}{an integer specifying the number of right censored observations.}
 }
 \value{An object of class htest.}
 \details{
@@ -35,6 +37,11 @@ The test statistics \eqn{T} is a combination between two Wald test statistics: P
 The expression of the statistic \eqn{T} is as follows:
 
 \eqn{T=0.5\left|\frac{\breve{PGW}_w-\overline{\breve{PGW}_w}}{sd(\breve{PGW}_w)}\right|+0.5\left|\frac{\hat{MW}_w-\overline{\hat{MW}_w}}{sd(\hat{MW}_w)}\right|}
+
+All the previous tests can be applied to type II right censored samples (simple censoring). The censoring is introduced in the MLEs. 
+A second statistic \eqn{G} similar to \eqn{T}, is combining Wald and likelihood ratio tests based on the Generalized Gamma distribution:
+
+\eqn{G=0.5\left|\frac{\hat{GG}^1_l-\overline{\hat{GG}^1_l}}{sd(\hat{GG}^1_l)}\right|+0.5\left|\frac{\hat{GG}^1_w-\overline{\hat{GG}^1_w}}{sd(\hat{GG}^1_w)}\right|}
 
 }
 \references{

@@ -22,33 +22,19 @@
       CO=(n+sum(log(x)-n*x*log(x)/sum(x)))/I
       CO=CO^2
       LK.statistic <- CO
-    }
-    ### Test of Wald
+    }### Test of Wald
     else if(type=="W"){
-      
-      f <- function(a){
-        l1=a[1]
-        l2=a[2]
-        f=n*log(l2/l1)+(l2-1)*sum(log(x/l1))-sum((x/l1)^l2)
-      } 
-      m <-maxLik::maxNR(f, start=c(0.1,0.1))
-      eta=m$estimate[1]
-      beta=m$estimate[2]
+      m <- MLEst(x)
+      eta=m$eta
+      beta=m$beta
       I=(n/6)*pi^2
       W=I*(beta-1)^2
       LK.statistic <-W
     }### Test of LR
-    else if(type=="LR"){
-      
-      f <- function(a){
-        l1=a[1]
-        l2=a[2]
-        f=n*log(l2/l1)+(l2-1)*sum(log(x/l1))-sum((x/l1)^l2)
-      } 
-      m <-maxLik::maxNR(f, start=c(0.1,0.1))
-      eta=m$estimate[1]
-      beta=m$estimate[2]
-      
+    else if(type=="LR"){  
+      m <- MLEst(x)
+      eta=m$eta
+      beta=m$beta
       #Calcul de la statistique de test
       LR=2*n*log(beta*sum(x)/sum(x^beta))+2*(beta-1)*sum(log(x))
       

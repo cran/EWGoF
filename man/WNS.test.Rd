@@ -5,7 +5,7 @@
 Computes the Weibull GoF tests based on the normalized spacings: (TS) Tiku-Singh, (MSF) Mann-Scheuer-Fertig only with right censoring and (LOS) Lockhart-O'Reilly-Stephens test statistics. 
 }
 \usage{
-WNS.test(x, type = "TS", s = 0, r = 0, nsim = 2000)
+WNS.test(x, type = "TS", s = 0, r = 0, nsim = 1000)
 }
 \arguments{
 \item{x}{a numeric vector of data values.}
