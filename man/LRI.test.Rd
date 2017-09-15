@@ -7,7 +7,7 @@ GoF tests based on the Laplace transform, the mean residual life and the integra
 \description{
 Computes the Weibull GoF tests based on the Laplace transform: Baringhaus-Henze (BH) and Henze (He). The test statistic of Klar (Kl) is based on the integrated distribution function. Two tests are based on the mean residual life (BHC, BHK).}
 \usage{
-LRI.test(x, type = "BH", a = 1, nsim = 2000)
+LRI.test(x, type = "BH", a = 1, nsim = 200)
 }
 \arguments{
  \item{x}{a numeric vector of data values.}
@@ -33,10 +33,10 @@ Klar B., Goodness-of-fit tests for the exponential and normal distribution based
 x <- rlnorm(50,0.3)
 
 #Apply the Baringhaus-Henze test
-LRI.test(x,type="BH",nsim=200)
+LRI.test(x,type="BH")
 
 # Apply the test of Henze
-LRI.test(x,type="He",nsim=200)
+LRI.test(x,type="He")
 
 
 # Apply the test of Klar

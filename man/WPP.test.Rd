@@ -13,7 +13,7 @@ Two additional statistics can also be computed: the first one (ST1) is based on 
 }
 
 \usage{
-WPP.test(x, type = "SB", nsim = 2000)
+WPP.test(x, type = "SB", nsim = 200)
 }
 \arguments{
 \item{x}{a numeric vector of data values.}
@@ -26,19 +26,15 @@ WPP.test(x, type = "SB", nsim = 2000)
 
 \author{Meryam KRIT}
 \examples{
-x <- rlnorm(50,3)
+x <- rlnorm(10,3)
 
 #Apply the Ozturk-Korukoglu test
 WPP.test(x,type="OK")
 
-# Apply the test based on the stabilized probability plot
-WPP.test(x,type="SPP")
 
 # Apply the generalized smooth test based on the kurtosis 
 WPP.test(x,type="ST1")
 
-#Apply the test of Shapiro and Brain
-WPP.test(x)
 }
 
 

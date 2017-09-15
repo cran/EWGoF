@@ -7,7 +7,7 @@ GoF tests based on the empirical distribution function, the normalized spacings 
 Computes the Exponential GoF tests based on the empirical distribution function: the Kolmogorov-Smirnov (KS), Cramer-Von-Mises (CM) and Anderson-Darling (AD) tests, the tests based on the probability plot: Shapiro-Wilk (SW) and Patwardhan (PA) tests and the tests based on the normalized spacings: Gnedenko (Gn) and Gini (G) tests.
 }
 \usage{
-EDF_NS.test(x, type = "AD", nsim = 2000)
+EDF_NS.test(x, type = "AD", nsim = 200)
 }
 \arguments{
   \item{x}{a numeric vector of data values.}

@@ -7,7 +7,7 @@
 Computes the Weibull GoF tests based on the empirical distribution function: Kolmogorov-Smirnov (KS), Cramer-Von-Mises (CM), Watson (W), Anderson-Darling (AD) and Liao-Shimokawa (LS) statistics using the three following estimation methods: Maximum Likelihood Estimators (MLE), Least Squares Estimators (LSE) and Moments Estimators (ME). A test statistic (KL) is added to this family but it is based on the Kullback-Leibler information; this test can also be computed with the three estimation methods.
 }
 \usage{
-WEDF.test(x, type = "AD", funEstimate = "MLE", paramKL = 2, nsim = 2000)
+WEDF.test(x, type = "AD", funEstimate = "MLE", paramKL = 2, nsim = 200)
 }
 
 \arguments{

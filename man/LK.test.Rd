@@ -6,7 +6,7 @@
 \description{
 Computes the Exponential GoF tests based on the three following statistics: the score of Cox-Oakes (CO), Wald (W) and likelihood ratio (LR) GoF tests. These tests include the Exponential distribution in the Weibull distribution and apply a parametric test to check whether the shape parameter is equal to one.}
 \usage{
-LK.test(x, type = "CO", nsim = 1000)
+LK.test(x, type = "CO", nsim = 200)
 }
 \arguments{
   \item{x}{a numeric vector of data values.}
@@ -29,13 +29,13 @@ Cox D.R. and Oakes D., \emph{Analysis of survival data}, Chapman and Hall, 1984.
 x <- rgamma(20,0.3)
 
 #Apply the Cox and Oakes test (score) test
-LK.test(x,type="CO",nsim=200)
+LK.test(x,type="CO")
 
 # Apply the test based on Wald
-LK.test(x,type="W",nsim=200)
+LK.test(x,type="W")
 
 # Apply the test based on the likelihood ratio
-LK.test(x,type="LR",nsim=200)
+LK.test(x,type="LR")
 }
 \keyword{Score test}
 \keyword{Wald test}

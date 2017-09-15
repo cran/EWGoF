@@ -1,4 +1,4 @@
-WEDF.test<-function(x,type="AD",funEstimate="MLE",paramKL=2, nsim=2000){
+WEDF.test<-function(x,type="AD",funEstimate="MLE",paramKL=2, nsim=200){
  
   #Family of the test statistics based on the empirical distribution function 
   ECF.statistic<-function(x,type="AD",funEstimate="MLE",paramKL=2){

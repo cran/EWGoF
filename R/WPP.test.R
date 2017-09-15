@@ -1,6 +1,6 @@
 
 
-WPP.test <- function(x,type="SB",nsim=2000){
+WPP.test <- function(x,type="SB",nsim=200){
   ##Family of the test statistics based on the probability plot and shapiro-Wilk type tests
   WPP.statistic<-function(x,type="OK"){
     TYPE <- deparse(substitute(type))

@@ -5,7 +5,7 @@
 Computes the Weibull GoF tests based on the normalized spacings: (TS) Tiku-Singh, (MSF) Mann-Scheuer-Fertig only with right censoring and (LOS) Lockhart-O'Reilly-Stephens test statistics. 
 }
 \usage{
-WNS.test(x, type = "TS", s = 0, r = 0, nsim = 1000)
+WNS.test(x, type = "TS", s = 0, r = 0, nsim = 200)
 }
 \arguments{
 \item{x}{a numeric vector of data values.}
@@ -37,18 +37,10 @@ Lockhart R.A., O'Reilly F. and Stephens M.A., Tests for the extreme-value and We
 x1 <- rweibull(50,2,3)
 
 #Apply the Tiku-Singh test with censored sample: 4 left censored and 5 right censored values  
-WNS.test(x1,type="TS",s=4,r=5)
+\dontrun{WNS.test(x1,type="TS",s=4,r=5)}
 
-#Apply the Lockahrt-O'reilly and Stephens test to the complete sample
-WNS.test(x1,type="LOS")
 
-x2 <- rlnorm(100,.3)
 
-#Apply the Mann-Scheuer and Fertig test 
-WNS.test(x2,type="MSF")
-
-#Apply Tiku-Singh test to the complete sample x2
-WNS.test(x2)
 }
 \keyword{normalized spacings}
 \keyword{Tiku-Singh statistic}

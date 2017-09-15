@@ -1,5 +1,5 @@
 
-LRI.test<-function(x,type="BH", a=1, nsim=2000){
+LRI.test<-function(x,type="BH", a=1, nsim=200){
   #Family of the test statistics based on the Laplace, the integrated distribution 
   #function and the mean residual life 
   LRI.statistic<-function(x,type="BH",a=1){

@@ -1,7 +1,7 @@
 
 #Function that computes the moment estimators of the two parameters of Weibull 
 MEst<-function(x){
-  if(sum(x<0)){stop(paste("Data x is not a positive sample"))}
+  if(sum(x<=0)){stop(paste("Data x is not a positive sample"))}
   n = length(x)
   #Apply the log. transformation => If: X -> Weibull, then -log(X) -> EV
   y = sort(log(x))

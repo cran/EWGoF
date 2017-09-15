@@ -1,4 +1,4 @@
-WLP.test<-function(x,type="CQ",funEstimate="MLE", s1=-1,s2=0.4,mr=100,a=-5,nsim=500){
+WLP.test<-function(x,type="CQ",funEstimate="MLE", s1=-1,s2=0.4,mr=100,a=-5,nsim=200){
 
   ##Family of the test statistics based on the Laplace transform
   LP.statistic<-function(x,type,funEstimate,s1,s2,mr,a){
@@ -110,7 +110,7 @@ WLP.test<-function(x,type="CQ",funEstimate="MLE", s1=-1,s2=0.4,mr=100,a=-5,nsim=
   TYPE <- deparse(substitute(type))
   EST <- NULL
   n <- length(x)
-  if(sum(x<0)){
+  if(sum(x<=0)){
     stop(paste("Data ", DNAME, " is not a positive sample"))}
   if(nsim<100){
     warning("small values of Monte-Carlo iterations may affect the value of the p-value")

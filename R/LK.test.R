@@ -1,4 +1,4 @@
- LK.test<-function(x,type="CO", nsim=1000){
+ LK.test<-function(x,type="CO", nsim=200){
   #Family of the test statistics based on the Laplace 
   LK.statistic<-function(x,type){
       sumKeepAttr <- function( x, keepNames = FALSE, na.rm = FALSE ) {

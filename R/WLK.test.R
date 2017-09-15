@@ -1,4 +1,4 @@
-WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=500,r=0){
+WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=200,r=0){
   ##Family of the Likelihood based test
   LK.statistic<-function(x,type,funEstimate,procedure,r=0){
     TYPE <- deparse(substitute(type))
@@ -143,8 +143,11 @@ WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=500,r=0){
     METHOD="Test based on the Marshall Olkin distribution for the Weibull distribution "
   }else if(as.character(type)=="MW"){
     METHOD="Test based on the Modified Weibull distribution for the Weibull distribution "
-  }else if(as.character(type)=="T"){
-    METHOD="Test based on the combination of MW and PGW for the Weibull distribution "
+  }else if(as.character(type)=="T1"){
+    METHOD="Test based on the combination (max) of MW and PGW for the Weibull distribution "
+    family=2
+  }else if(as.character(type)=="T2"){
+    METHOD="Test based on the combination (sum) of MW and PGW for the Weibull distribution "
     family=2
   }else if(as.character(type)=="G"){
     METHOD="Test based on the combination of GG statistic "
@@ -171,7 +174,28 @@ WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=500,r=0){
     fun <- LK.statistic(y,type,funEstimate,procedure,r)
     return(fun$statistic)
   }
- }else if(as.character(type)=="T"){
+ }else if(as.character(type)=="T1"){
+    stat1 <- LK.statistic(x,"MW","MLE","W")
+    statistic.obs1=stat1$statistic
+    stat2 <- LK.statistic(x,"PGW","ME","W")
+    statistic.obs2=stat2$statistic
+    estimate.obs <- c(stat1$eta,stat1$beta)
+    fun1<-function(y){
+     fun1 <- LK.statistic(y,"MW","MLE","W")
+     return(fun1$statistic)
+    }
+    fun2<-function(y){
+    fun2 <- LK.statistic(y,"PGW","ME","W")
+    return(fun2$statistic)
+  }
+  sim <- GoFsim2d(nsim,n,fun1,fun2)   
+  sim.statistic1 <- sim[1,]
+  sim.statistic2 <- sim[2,]
+  statistic.obs <- abs(statistic.obs1-mean(sim.statistic1))/sd(sim.statistic1)
+  statistic.obs <- max(statistic.obs, abs(statistic.obs2-mean(sim.statistic2))/sd(sim.statistic2))
+  sim.statistic <- abs((sim.statistic1-mean(sim.statistic1)))/sd(sim.statistic1)
+  sim.statistic <- pmax(sim.statistic, abs((sim.statistic2-mean(sim.statistic2)))/sd(sim.statistic2))
+}else if(as.character(type)=="T2"){
     stat1 <- LK.statistic(x,"MW","MLE","W")
     statistic.obs1=stat1$statistic
     stat2 <- LK.statistic(x,"PGW","ME","W")
@@ -192,7 +216,8 @@ WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=500,r=0){
   statistic.obs <- statistic.obs + 0.5*abs(statistic.obs2-mean(sim.statistic2))/sd(sim.statistic2)
   sim.statistic <- 0.5*abs((sim.statistic1-mean(sim.statistic1)))/sd(sim.statistic1)
   sim.statistic <- sim.statistic + 0.5*abs((sim.statistic2-mean(sim.statistic2)))/sd(sim.statistic2)
- }else{
+ 
+ }else if(as.character(type)=="G"){
     stat1 <- LK.statistic(x,"GG1","MLE","W",r)
     statistic.obs1=stat1$statistic
     stat2 <- LK.statistic(x,"GG1","MLE","LR",r)
@@ -213,9 +238,9 @@ WLK.test<-function(x,type="GG1",funEstimate="MLE",procedure="S",nsim=500,r=0){
     statistic.obs <- statistic.obs + 0.5*abs(statistic.obs2-mean(sim.statistic2))/sd(sim.statistic2)
     sim.statistic <- 0.5*abs((sim.statistic1-mean(sim.statistic1)))/sd(sim.statistic1)
     sim.statistic <- sim.statistic + 0.5*abs((sim.statistic2-mean(sim.statistic2)))/sd(sim.statistic2)  
-   }
+   } else  stop(paste("The chosen test ",TYPE," is unknown"))  
 
-  sim.statistic<-switch(type,"T" = sim.statistic,"G" = sim.statistic, GoFsim(nsim,n,fun))
+  sim.statistic<-switch(type,"T1" = sim.statistic,"T2" = sim.statistic,"G" = sim.statistic, GoFsim(nsim,n,fun))
   p_val <- sum(sim.statistic>=statistic.obs)/nsim
   WLK.test <- list(statistic =c(S= statistic.obs), p.value = p_val, 
                  method = paste(METHOD," ", EST, " ", PROC),

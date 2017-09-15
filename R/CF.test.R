@@ -1,5 +1,5 @@
 
-CF.test<-function(x, type = "EP" , a = 1, nsim = 1000){
+CF.test<-function(x, type = "EP" , a = 1, nsim = 200){
   #Family of the test statistics based on the caracteristic function 
   CF.statistic<-function(x, type, a){
     TYPE <- deparse(substitute(type))

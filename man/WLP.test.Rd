@@ -6,7 +6,7 @@ GoF tests based on the Laplace transform for the Weibull distribution
 \description{
 Computes the Weibull GoF tests based on the Laplace transform: (CQ) Cabana-Quiroz with the two versions either with the Maximum Likelihood Estimators (MLE) or the Moment Estimators (ME) and (LT) based on the Laplace transform with discretization which has three versions, it can be computed either with the MLE, ME or the Least Squares Estimators (LSE). 
 }
-\usage{WLP.test(x,type = "CQ",funEstimate="MLE",s1=-1,s2=0.4,mr=100,a=-5,nsim=500)}
+\usage{WLP.test(x,type = "CQ",funEstimate="MLE",s1=-1,s2=0.4,mr=100,a=-5,nsim = 200)}
 \arguments{
 \item{x}{a numeric vector of data values.}
 
@@ -32,16 +32,11 @@ Krit M., Goodness-of-fit tests for the Weibull distribution based on the Laplace
 
 \author{Meryam KRIT}
 \examples{
-x<-rlnorm(50,3)
+# Xie data
+x<-c(5, 11, 21, 31, 46, 75, 98, 122, 145, 165, 195, 224, 245, 293, 321, 330, 350, 420)
 
-#Apply test based on the discretized Laplace transform 
-WLP.test(x,type="LT",funEstimate="MLE")
-
-#Apply test of Cabana and Quiroz with maximum likelihood estimators
-WLP.test(x, type="CQ",funEstimate="MLE",s1=-0.1,s2=0.02)
-
-#Apply test of Cabana and Quiroz with the moment estimators
-WLP.test(x, type="CQ",funEstimate="ME",s1=-1,s2=0.4)
+#Apply test of Cabana and Quiroz with the least squares estimators
+\dontrun{WLP.test(x, type="CQ*",funEstimate="LSE")}
 }
 \keyword{Laplace transform}
 \keyword{Cabana-Quiroz test}

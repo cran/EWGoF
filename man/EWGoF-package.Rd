@@ -4,14 +4,14 @@
 \docType{package}
 \title{Goodness-of-Fit Tests for the Exponential and Two-Parameter Weibull Distributions}
 \description{
-An implementation of a large number of the goodness-of-fit tests for the Exponential and Weibull distributions classified into families: the tests based on the empirical distribution function, the tests based on the probability plot, the tests based on the normalized spacings, the tests based on the Laplace transform and the likelihood based tests ...
+This package contains a large number of the goodness-of-fit tests for the Exponential and Weibull distributions classified into families: the tests based on the empirical distribution function, the tests based on the probability plot, the tests based on the normalized spacings, the tests based on the Laplace transform and the likelihood based tests ...
 }
 \details{
 \tabular{ll}{
 Package: \tab EWGoF\cr
 Type: \tab Package\cr
-Version: \tab 2.1\cr
-Date: \tab 2014-01-13\cr
+Version: \tab 2.2\cr
+Date: \tab 2017-09-08\cr
 License: \tab GPL (>=2.0)\cr
 Imports: \tab Rcpp (>= 0.10.3) \cr
 LazyLoad: \tab yes\cr
@@ -20,7 +20,7 @@ LinkingTo: \tab Rcpp\cr
 Computes the p-value of the chosen test statistic, the value of the observed statistic and an estimation of the distribution parameters (either the parameter of the Exponential distribution or the shape and the scale Weibull parameters). }
 \author{
 Meryam Krit
-Maintainer: Meryam Krit <meryam.krit@imag.fr>
+Maintainer: Meryam Krit <meryam.krit@gmail.com>
 }
 \references{
 \itemize{

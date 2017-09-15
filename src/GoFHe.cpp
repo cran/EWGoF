@@ -6,7 +6,6 @@ double GoFHe(NumericVector x,double a,NumericVector a1) {
   
  
   double s = 0;
-  double t = 0;
   double n = x.size();
   double  e = n/sum(x);
   NumericVector y = e*x;

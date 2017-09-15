@@ -5,7 +5,7 @@ GoF tests based on the empirical characteristic function for the Exponential dis
 \description{
 Computes the GoF tests based on the characteristic function of the Exponential distribution: Epps-Pulley (EP), Henze-Meintanis (W1, W2) and Meintanis-Iliopoulos test statistics (T1, T2).}
 \usage{
-CF.test(x, type = "EP", a = 1, nsim = 1000)
+CF.test(x, type = "EP", a = 1, nsim = 200)
 }
 \arguments{
   \item{x}{a numeric vector of data values.}

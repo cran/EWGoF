@@ -1,4 +1,4 @@
-EDF_NS.test<-function(x,type="AD", nsim=2000){
+EDF_NS.test<-function(x,type="AD", nsim=200){
   
   #Family of the test statistics based on the empirical distribution function 
   ECF.statistic<-function(x,type="AD"){
