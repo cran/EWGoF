@@ -62,8 +62,9 @@ WLK.test(x,type="MO",funEstimate="LSE",procedure="LR")
 
 #Apply G to censored sample at right r=10
 a<- sort(x[1:40])
+\dontrun{
 WLK.test(a,type="G",r=10)
-
+}
 }
 
 \keyword{Likelihood based tests}

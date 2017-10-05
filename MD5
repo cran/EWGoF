@@ -1,6 +1,6 @@
-a45e8a7e9ca225122e4298d1d01a233a *DESCRIPTION
+ed732d31a92dbc975fe9b4028a5d5806 *DESCRIPTION
 ed81294cb8abfeac1e6c89f30058d350 *NAMESPACE
-24787cb97f6d057adfa1529e0c042369 *R/BLOMEst.R
+219fa0c55ee7374a174d9ec5d2743681 *R/BLOMEst.R
 ee24d9a847affe817a637191898e80c8 *R/CF.test.R
 89e51a09e5ae5e40c9f49bf3a11dd4ae *R/EDF_NS.test.R
 65d0f54fbedf9aee39d9b11bdde28a45 *R/LK.test.R
@@ -8,7 +8,7 @@ ee24d9a847affe817a637191898e80c8 *R/CF.test.R
 9ab7e5d5d763897c1068555fbda8b8ad *R/LSEst.R
 b5ea2de034fa1e27c9dea8337e77c6dd *R/MEst.R
 53e2b95df1d93bd8b063ca73809b0cc8 *R/MLEst.R
-ce00c7a80ce95cce20ac5ef565e27514 *R/RcppExports.R
+f8b3fad6e40cc78736b755812a8df3ab *R/RcppExports.R
 30ab9098d0ce0a661f842312ef77cbcc *R/WEDF.test.R
 8fcbb2fa9d64a6602ef01a11b74718f9 *R/WLK.test.R
 a17d8008dc8fbeafff87aa32bc7a38d2 *R/WLP.test.R
@@ -24,11 +24,10 @@ f871051e9d2b78a59d074084ce026192 *man/LSEst.Rd
 a8b413c51d6cd3beafb14432d84585cb *man/MEst.Rd
 562143f6e02e22c21bbb30e68633b2cb *man/MLEst.Rd
 1a1fccd876e7d67b0eabcf3e46e50116 *man/WEDF.test.Rd
-36ed5de5345bb4bf19be05d27bf58872 *man/WLK.test.Rd
+e4c242bc09540d7cea6733b21b8e0d8d *man/WLK.test.Rd
 9e6ae9e4fc87a6941425abb41782af52 *man/WLP.test.Rd
-3d1eb45e53cb2480271651a883883930 *man/WNS.test.Rd
-60656169b95e2a5c898e29e46dad7afb *man/WPP.test.Rd
-2f12093667efd3bbaa0e71e54ce9dea0 *src/EWGoF_init.c
+1043c23b2f9fe19d7a9a5abad7c2faa2 *man/WNS.test.Rd
+2afac4539336d6e0d3f1f96b5881825e *man/WPP.test.Rd
 22520e0cbb80d9f1a816cd66976ac61a *src/GoFBH.cpp
 1c33856c19a021f3edd050d75fa43960 *src/GoFBHC.cpp
 914eb1883019661f2884ecc62770330b *src/GoFBHK.cpp
@@ -36,7 +35,7 @@ f1dc18068aa71ae03be9ee1152022488 *src/GoFHM.cpp
 b264b0ffd18af9c7990f16948d86dadb *src/GoFHe.cpp
 f824659a248ce6bf9ea1af148bf5b3ad *src/GoFKl.cpp
 a2f1ed21f11f1ea7f873f4c90936e418 *src/GoFMI.cpp
-81c1c8ad28fc162b1f6d2572381daec0 *src/GoFNS.cpp
-96e0a68e54f41bbb72ada6fff45ca767 *src/GoFsim.cpp
-0fda463f60228687b309d374a0dfac7f *src/GoFsim2d.cpp
-1318ddd9bd40d62ff13925dfcab79056 *src/RcppExports.cpp
+e0c80ab0a31fcbece9778bc6e6af3163 *src/GoFNS.cpp
+06d4a86d08cf1261b3467aea80c6adf3 *src/GoFsim.cpp
+f73732cfb04d8f24ebc75adc2c2a378f *src/GoFsim2d.cpp
+a86928561a0f0da9846ad6c5669aa4b7 *src/RcppExports.cpp

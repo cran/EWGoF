@@ -29,11 +29,15 @@ WPP.test(x, type = "SB", nsim = 200)
 x <- rlnorm(10,3)
 
 #Apply the Ozturk-Korukoglu test
-WPP.test(x,type="OK")
+\dontrun{
+ WPP.test(x,type="OK")
+ }
 
 
 # Apply the generalized smooth test based on the kurtosis 
+\dontrun{
 WPP.test(x,type="ST1")
+}
 
 }
 

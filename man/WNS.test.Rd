@@ -2,7 +2,7 @@
 \alias{WNS.test}
 \title{GoF tests based on the normalized spacings for the Weibull distribution}
 \description{
-Computes the Weibull GoF tests based on the normalized spacings: (TS) Tiku-Singh, (MSF) Mann-Scheuer-Fertig only with right censoring and (LOS) Lockhart-O'Reilly-Stephens test statistics. 
+Computes the Weibull GoF tests based on the normalized spacings: (TS) Tiku-Singh, (MSF) Mann-Scheuer-Fertig only with right censoring and (LOS) Lockhart-O'Reilly-Stephens test statistics.
 }
 \usage{
 WNS.test(x, type = "TS", s = 0, r = 0, nsim = 200)
@@ -36,8 +36,10 @@ Lockhart R.A., O'Reilly F. and Stephens M.A., Tests for the extreme-value and We
 \examples{
 x1 <- rweibull(50,2,3)
 
-#Apply the Tiku-Singh test with censored sample: 4 left censored and 5 right censored values  
-\dontrun{WNS.test(x1,type="TS",s=4,r=5)}
+#Apply the Tiku-Singh test with censored sample: 4 left censored and 5 right censored values
+\dontrun{
+WNS.test(x1,type="TS",s=4,r=5)
+}
 
 
 
